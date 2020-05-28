@@ -97,6 +97,7 @@ class Photometry:
         ##########
         ##########
         ##########
+        plt.figure()
         plt.imshow(tmpdata,origin='lower',cmap='viridis',vmin=-1,vmax=1)
         aperture.plot(color='red')
         dx,dy = 3,3

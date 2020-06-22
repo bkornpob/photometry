@@ -10,7 +10,7 @@ import os
 from photutils import CircularAperture
 from photutils import aperture_photometry
 from photutils.utils import calc_total_error
-from kbastroutils.photapcorr import PhotApCorr
+from hstapcorr.photapcorr import PhotApCorr
 
 class Photometry:
     '''

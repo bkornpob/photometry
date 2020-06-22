@@ -21,6 +21,7 @@ class Photometry:
     obj.skycoord to see skycoord of the object
     obj.wcs to see wcs
     obj.xy to see (pixX,pixY) of the object converting from skycoord and wcs
+        call Photometry(pixXY = (pixX,pixY)) to use the specified pixXY instead of reading from WCS
     obj.pad to see padding dimensions
     obj.compute_bbox() to compute bbox
     obj.bbox to see different bounding boxes computed from pad and xy
@@ -35,7 +36,7 @@ class Photometry:
     obj.show3d() to see 3d plots
     obj.showsub() to see plots related to background subtraction
     '''
-    def __init__(self,filename=None,skycoord=None,wcs=None,
+    def __init__(self,filename=None,skycoord=None,wcs=None,pixXY=None,
                  aprad=5,daprad=1,
                  padxleft=3,padxright=3,
                  padylow=3,padyup=3
@@ -47,7 +48,10 @@ class Photometry:
             self.root = None
         self.skycoord = skycoord
         self.wcs = wcs
-        self.xy = self._xy()
+        if pixXY:
+            self.xy = pixXY
+        else:
+            self.xy = self._xy()
         self.pad = {'aprad':aprad,'daprad':daprad,
                     'padxleft':padxleft,'padxright':padxright,
                     'padylow':padylow,'padyup':padyup

@@ -95,7 +95,9 @@ class Photometry:
         emag = 2.5 * np.sqrt(phot_table['aperture_sum_err']**2) / (phot_table['aperture_sum'] * np.log(10.))        
         tmp = {'phot_table':phot_table,
                'apcorr':apcorr,
-               'mag':(mag[0],emag[0])
+               'mag':(mag[0],emag[0]),
+               'wavelength':wave,
+               'zp':zp
               }
         self.phot_table = tmp
         ##########

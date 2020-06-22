@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="photometry",
-    version="1.2.0",
+    version="1.3.0",
     author="Kornpob Bhirombhakdi",
     author_email="kbhirombhakdi@stsci.edu",
     long_description=open("README.md").read(),
